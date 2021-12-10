@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col s12 m8 l6 xl4 offset-m2 offset-l3 offset-xl4">
+        <mat-card>
+            <form class="row" [formGroup]="formLogin" (ngSubmit)="tryLogin()">
+
+
+                <mat-form-field appearance="fill" class="col s12">
+                    <mat-label>Login</mat-label>
+                    <input matInput type="text" formControlName="login" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                    <mat-icon matSuffix>person_outline</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12">
+                    <mat-label>Senha</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+                    <mat-icon matSuffix (click)="hide = !hide">{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+                <div class="mt-5 col s12 center">
+                    <button mat-flat-button color="primary" [disabled]="!formLogin.valid" type="submit">
+            Entrar
+          </button>
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

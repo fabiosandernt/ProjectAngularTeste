@@ -1,0 +1,62 @@
+<!-- <p>Administrativo</p>
+     <p>Financeiro</p>
+     <p>Veículos</p>
+     <p>Consignante</p>
+     <p>Dashboard</p> -->
+
+<div class="sidenav-custom fadeIn animated" #sidenav>
+  <mat-card class="p-1 mt-1 ml-1 nav">
+    <div class="row m-0 p-0">
+      <div class="col s12 m-0 p-1">
+        <div [ngClass]="{'center': state === 2,'right': state === 1}" (click)="changeStatus()">
+          <i class="material-icons" *ngIf="state === 1">close</i>
+          <i class="material-icons" *ngIf="state === 2">menu</i>
+        </div>
+      </div>
+    </div>
+    <div class="row options">
+      <div class="col s12">
+        <div class="vertical-center p-1" [matTooltipPosition]="'right'" [matTooltip]="'Profile' ">
+          <img class="user-img" [ngClass]="{'center': state === 2,'left': state === 1}" src="/assets/images/notFound.jpeg" #imagePreloader>
+          <a class="pl-3 card-title small" style="border-right: #ffffff" *ngIf="state === 1">{{"User Name"}}</a>
+        </div>
+      </div>
+      <div class="align-up">
+        <a class="col s12" *ngFor="let module of options" [matMenuTriggerFor]="cliente" (click)="setMenuOptions(module)">
+          <div class="option vertical-center p-2" [ngClass]="{'active': getRoute() === module.module}" [matTooltipPosition]="'right'" [matTooltip]="module.name">
+            <i class="material-icons" [ngClass]="{'center': state === 2,'left': state === 1}">{{module.icon}}</i>
+            <a class="pl-3 card-title small" style="border-right: #ffffff" *ngIf="state === 1">
+              {{module.name}}
+            </a>
+          </div>
+        </a>
+      </div>
+      <div class="align-bottom p-1">
+        <div class="col s12 vertical-center menu-item m-0 p-0 disabled">
+          <div class="option vertical-center p-2 " [matTooltipPosition]="'right'" [matTooltip]="'Settings' ">
+            <i class="material-icons" [ngClass]="{'center': state === 2,'left': state === 1}">settings</i>
+            <a class="pl-3 card-title small" *ngIf="state === 1">{{'Settings'}}</a>
+          </div>
+        </div>
+
+        <div class="col s12 vertical-center menu-item m-0 p-0">
+          <div class="option vertical-center p-2 " [matTooltipPosition]="'right'" [matTooltip]="'Notifications' ">
+            <i class="material-icons" [ngClass]="{'center': state === 2,'left': state === 1}">notifications</i>
+            <i *ngIf="false" class="material-icons" [ngClass]="{'center': state === 2,'left': state === 1}">notifications_active</i>
+            <i *ngIf="false" class="material-icons" [ngClass]="{'center': state === 2,'left': state === 1}">notification_important</i>
+            <a class="pl-3 card-title small" *ngIf="state === 1">{{'Notifications'}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+
+<mat-menu #cliente="matMenu" [xPosition]="'after'" style="margin-left: 62px; width: fit-content; ">
+  <a mat-menu-item *ngFor="let option of menuOptions?.options" (click)="navigate(menuOptions.module + '/' + option.module)">
+    <mat-icon>{{option.icon}}</mat-icon>
+    <span>{{option.name}}</span>
+
+  </a>
+</mat-menu>

@@ -1,0 +1,141 @@
+<app-side-bar></app-side-bar>
+<div class="container fadeIn animated">
+    <h3>Cadastro de Veículo</h3>
+    <mat-card class="p-2 m-2 shadowless">
+        <form [formGroup]="veiculoForm">
+            <div class="mt-2 row">
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Veículo</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Veículo" matInput formControlName="veiculo" [matAutocomplete]="autoVeiculo">
+                    <mat-autocomplete #autoVeiculo="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredVeiculo | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Marca</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Marca" matInput formControlName="marca" [matAutocomplete]="autoMarca">
+                    <mat-autocomplete #autoMarca="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredMarca | async" [value]="option">
+                            {{option.marca}} <!-- Interpolando-->
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Modelo</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Modelo" matInput formControlName="modelo" [matAutocomplete]="autoModelo">
+                    <mat-autocomplete #autoModelo="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredModelo | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Ano Fab./Modelo</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Ano Fab./Modelo" matInput formControlName="anoFabricacao" [matAutocomplete]="autoAnoFabricacao">
+                    <mat-autocomplete #autoAnoFabricacao="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredAnoFabricacao | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Versão</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Versão" matInput formControlName="versao" [matAutocomplete]="autoVersao">
+                    <mat-autocomplete #autoVersao="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredVersao | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                    <mat-label>Valor de Venda</mat-label>
+                    <input matInput type="text" formControlName="valorVenda" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Consignado</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Consignado" matInput formControlName="versao" [matAutocomplete]="autoConsignado">
+                    <mat-autocomplete #autoConsignado="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredConsignado | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                    <mat-label>Chassi</mat-label>
+                    <input matInput type="text" formControlName="chassi" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+                <!--segunda div-->
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Tipo de Veículo</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Tipo de Veículo" matInput formControlName="tipoVeiculo" [matAutocomplete]="autoTipoVeiculo">
+                    <mat-autocomplete #autoTipoVeiculo="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredTipoVeiculo | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Combustível</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="Combustível" matInput formControlName="combustivel" [matAutocomplete]="autoCombustivel">
+                    <mat-autocomplete #autoCombustivel="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredCombustivel | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field class="col s12 m6 xl4 m-0" appearance="fill">
+                    <mat-label>Cor</mat-label>
+                    <input type="text" placeholder="Pick one" aria-label="CoR" matInput formControlName="cor" [matAutocomplete]="autoCor">
+                    <mat-autocomplete #autoCor="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredCor | async" [value]="option">
+                            {{option}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                    <mat-label> KM </mat-label>
+                    <input matInput type="text" formControlName="km" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                    <mat-label>Placa</mat-label>
+                    <input matInput type="text" formControlName="placa" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                    <mat-label> REVAVAN </mat-label>
+                    <input matInput type="text" formControlName="renavan" />
+                    <mat-error>Preenchimento Obrigatório</mat-error>
+                </mat-form-field>
+
+
+            </div>
+
+            <div class="button-row">
+                <button mat-raised-button class="btn-clean" (click)="insertVeiculo()" type="button">Criar Veiculo</button>
+                <!--<button mat-raised-button class="btn-save" color="primary">Salvar</button>-->
+             </div>
+
+            <!--<app-form-buttos></app-form-buttos>-->
+
+        </form>
+    </mat-card>
+</div>

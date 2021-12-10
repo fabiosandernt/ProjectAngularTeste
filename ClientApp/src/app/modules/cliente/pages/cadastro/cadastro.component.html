@@ -1,0 +1,251 @@
+<app-side-bar></app-side-bar>
+<div class="container fadeIn animated">
+    <h3>Cadastro de Cliente</h3>
+    <mat-card class="p-2 m-2">
+        <form [formGroup]="clientForm">
+            <mat-tab-group>
+                <mat-tab label="Dados Pessoais">
+                    <div class="mt-2 row">
+                        <!-- tabulação -->
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Tipo Pessoal</mat-label>
+                            <mat-select formControlName="tipoPessoa">
+                                <mat-option [value]="1"> Física </mat-option>
+                                <mat-option [value]="2"> Jurídica </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> CPF </mat-label>
+                            <input matInput type="text" formControlName="cpf" />
+                            <!-- apontando o atributo do formulario em cadasto.component.ts -->
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Nome </mat-label>
+                            <input matInput type="text" formControlName="email" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Email </mat-label>
+                            <input matInput type="email" formControlName="email" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Identidade </mat-label>
+                            <input matInput type="text" formControlName="identidade" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Orgão </mat-label>
+                            <input matInput type="text" formControlName="orgao" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Estado Civil </mat-label>
+                            <input matInput type="text" formControlName="estadoCivil" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Data de Nascimento</mat-label>
+                            <input matInput [matDatepicker]="picker2" formControlName="dataDeNascimento" />
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Celular</mat-label>
+                            <input matInput type="text" formControlName="celular" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Telefone Comercial</mat-label>
+                            <input matInput type="text" formControlName="telefoneComercial" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Nome da Mãe</mat-label>
+                            <input matInput type="text" formControlName="nomeDaMae" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Nome do Pai</mat-label>
+                            <input matInput type="text" formControlName="nomeDoPai" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Telefone</mat-label>
+                            <input matInput type="text" formControlName="telefone" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Dados Residênciais">
+                    <div class="mt-2 row">
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> CEP </mat-label>
+                            <input matInput type="text" formControlName="cep" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Estado </mat-label>
+                            <input matInput type="text" formControlName="estado" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Endereço </mat-label>
+                            <input matInput type="text" formControlName="endereco" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Numero </mat-label>
+                            <input matInput type="text" formControlName="numero" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Complemento </mat-label>
+                            <input matInput type="text" formControlName="complemento" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Bairro </mat-label>
+                            <input matInput type="text" formControlName="bairro" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Cidade </mat-label>
+                            <input matInput type="text" formControlName="cidade" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Dados Profissionais">
+                    <div class="mt-2 row">
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Empresa </mat-label>
+                            <input matInput type="text" formControlName="empresa" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> CEP </mat-label>
+                            <input matInput type="text" formControlName="cep" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Estado </mat-label>
+                            <input matInput type="text" formControlName="estado" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Endereço </mat-label>
+                            <input matInput type="text" formControlName="endereco" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Numero </mat-label>
+                            <input matInput type="text" formControlName="numero" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Complemento </mat-label>
+                            <input matInput type="text" formControlName="complemento" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Bairro </mat-label>
+                            <input matInput type="text" formControlName="bairro" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Cidade </mat-label>
+                            <input matInput type="text" formControlName="cidade" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Cargo </mat-label>
+                            <input matInput type="text" formControlName="cargo" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Salário </mat-label>
+                            <input matInput type="text" formControlName="salario" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Dados Bancários">
+                    <div class="mt-2 row">
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Tipo PIX</mat-label>
+                            <mat-select formControlName="tipoPix">
+                                <mat-option [value]="1"> CPF </mat-option>
+                                <mat-option [value]="2"> Celular </mat-option>
+                                <mat-option [value]="3"> CNPJ </mat-option>
+                                <mat-option [value]="4"> Email </mat-option>
+                                <mat-option [value]="5"> Aleatória </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Banco </mat-label>
+                            <input matInput type="text" formControlName="banco" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Agência </mat-label>
+                            <input matInput type="text" formControlName="agencia" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Cliente Desde</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="clienteDesde" />
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label> Chave PIX </mat-label>
+                            <input matInput type="text" formControlName="chavePix" />
+                            <mat-error>Preenchimento Obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Observação">
+                    <div class="mt-2 row">
+                        <mat-form-field appearance="fill" class="col s12 m6 xl4 m-0">
+                            <mat-label>Texto</mat-label>
+                            <textarea matInput formControlName="observacao"></textarea>
+                        </mat-form-field>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+
+        </form>
+    </mat-card>
+    <app-form-buttons></app-form-buttons>
+</div>

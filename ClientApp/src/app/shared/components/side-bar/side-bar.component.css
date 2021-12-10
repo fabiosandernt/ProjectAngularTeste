@@ -1,0 +1,85 @@
+.row,
+.col {
+    margin: 0;
+    padding: 0;
+}
+
+.user-img {
+    height: 40px;
+    border-radius: 20px;
+    width: auto;
+}
+
+.option {
+    box-sizing: border-box;
+    margin-top: .5rem;
+    width: 100%;
+    border: 3px 0 1px 0 #023A67 solid !important;
+    overflow: hidden;
+    border-radius: 0 4px 4px 0;
+    /*color: black;*/
+}
+
+.option.active {
+    border-left: 3px #023A67 solid !important;
+}
+
+.option:hover {
+    border-left: 1px #023A67 solid !important;
+    cursor: pointer;
+    background-color: #ededed;
+}
+
+.center {
+    margin: auto;
+}
+
+.menu-item.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: lightgray !important;
+}
+
+.menu-item.disabled i {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: lightgray !important;
+}
+
+.sidenav-custom {
+    transition-duration: .3s;
+    position: absolute;
+    width: 60px;
+    left: .25rem;
+    top: calc (94px + .25rem);
+    height: calc(100vh - 95px);
+}
+
+.sidenav-custom .nav {
+    height: 100%;
+    overflow: hidden;
+}
+
+.option,
+.options {
+    overflow: hidden;
+}
+
+.align-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 1px;
+}
+
+.align-up {
+  position: absolute;
+  top: 100px;
+  right: 1px;
+}
+
+.align-top {
+    flex: 1;
+    align-self: flex-start;
+}

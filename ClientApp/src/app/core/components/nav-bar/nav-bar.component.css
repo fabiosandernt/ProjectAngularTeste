@@ -1,0 +1,27 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.site-header {
+    height: 80px;
+    background: #039be5;
+    /*
+    background: -moz-linear-gradient(top, rgba(255, 0, 0, 1) 0%, rgba(213, 25, 33, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 0, 0, 1)), color-stop(100%, rgba(213, 25, 33, 1)));
+    background: -webkit-linear-gradient(top, rgb(221, 184, 121) 0%, rgb(225, 191, 133) 100%);
+    background: -o-linear-gradient(top, rgba(255, 0, 0, 1) 0%, rgba(213, 25, 33, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(255, 0, 0, 1) 0%, rgba(213, 25, 33, 1) 100%);
+    background: linear-gradient(to bottom, rgb(219, 180, 115) 0%, rgb(244, 226, 193) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ff0000', endColorstr='#d51921', GradientType=0);
+*/
+}
+
+.header-image {
+    height: 75px;
+    width: auto;
+    margin-top: 5%;
+}
+
+.custom-icon {
+    color: white;
+}

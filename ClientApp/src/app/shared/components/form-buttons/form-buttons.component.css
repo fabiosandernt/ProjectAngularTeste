@@ -1,0 +1,15 @@
+ .btn-clean {
+     float: left;
+     background-color: teal;
+     border: 1px solid black;
+ }
+ 
+ .btn-save {
+     float: right;
+     background-color: green;
+     border: 1px solid black;
+ }
+ 
+ .button-row {
+     margin-top: 1.5em;
+ }

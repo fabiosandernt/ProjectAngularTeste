@@ -1,0 +1,51 @@
+<app-side-bar></app-side-bar>
+<div class="row">
+    <div class="col s12">
+        <h4>Conciliação Bancária</h4>
+    </div>
+    <mat-card class="m-1">
+        <div class="col s12">
+            <form class="row">
+                <mat-form-field appearance="fill" class="col left">
+                    <mat-label>Enter a date range</mat-label>
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date" />
+                        <input matEndDate placeholder="End date" />
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="col right">
+                    <mat-label>Banco</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let banco of bancos" [value]="banco.id">{{ banco.nome }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="col s12">
+            <table>
+                <thead>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Fornecedor</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Saldo</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let concilicao of conciliacoes">
+                        <td>{{ concilicao.data | date: "MM/dd/yy hh:m" }}</td>
+                        <td>{{ concilicao.descricao }}</td>
+                        <td>{{ concilicao.fornecedor }}</td>
+                        <td>{{ concilicao.tipo }}</td>
+                        <td>{{ concilicao.valor | currency: "BRL" }}</td>
+                        <td>{{ concilicao.saldo | currency: "BRL" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-card>
+</div>
