@@ -10,7 +10,7 @@ namespace ProjectAngularTeste.Controllers
 {
     public class Context : DbContext
     {
-        // falar pro entity que eu vou ter uma tabela de veiculo, quando precisar acessar ela basta referenciar o context
+        // falar ao entity que eu vou ter uma tabela de veiculo, quando precisar acessar ela basta referenciar o context
         public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
