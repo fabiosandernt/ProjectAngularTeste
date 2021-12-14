@@ -15,8 +15,11 @@ namespace ProjectAngularTeste.Controllers
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBilder)
+        
         {
-            optionsBilder.UseSqlServer(connectionString: @"Server=BYCLOUD\SQLEXPRESS;Database=Premier;Integrated Security=True");
+            optionsBilder.UseSqlServer(connectionString: @"Server=localhost;Database=Premier;Integrated Security=Matos@1807");
+           //optionsBilder.UseSqlServer(connectionString: @"Server=BYCLOUD\SQLEXPRESS;Database=Premier;Integrated Security=True");
+            //Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
         }
     }
 }
