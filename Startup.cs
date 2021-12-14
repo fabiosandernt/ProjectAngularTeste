@@ -9,9 +9,9 @@ using Microsoft.OpenApi.Models;
 using ProjectAngularTeste.Controllers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
 using System.Text;
 using ProjectAngularTeste.Utils;
+using Microsoft.EntityFrameworkCore;
 
 namespace ProjectAngularTeste
 {
@@ -52,8 +52,12 @@ namespace ProjectAngularTeste
                 };
             });
                 
+            services.AddDbContext<Context>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Default"));
+            });
 
-            services.AddDbContext<Context>();
+            //services.AddDbContext<Context>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectAngularTeste.Api", Version = "v1"} );
