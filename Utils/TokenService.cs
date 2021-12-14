@@ -10,9 +10,7 @@ namespace ProjectAngularTeste.Utils
     public static class TokenService
     {
         private static string _secret = "bm5mZ2Zqa3Ryc2xyaW92eGRhLnNhZGFzXGRhd3dxZXcuL2FzZGE+KjNkPz5zd2RkLiUyM2Rhc2ExMjIxLi8=";
-
         public static string GetSecretToken() => _secret;
-
         public static string GenerateToken(Usuario user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
