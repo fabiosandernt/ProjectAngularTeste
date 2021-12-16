@@ -27,6 +27,13 @@ namespace ProjectAngularTeste
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(c =>
+            {
+                c.AddDefaultPolicy(i =>
+                {
+                    i.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -40,8 +47,9 @@ namespace ProjectAngularTeste
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(options => {
-                
+            .AddJwtBearer(options =>
+            {
+
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateAudience = false,
@@ -51,7 +59,7 @@ namespace ProjectAngularTeste
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(TokenService.GetSecretToken()))
                 };
             });
-                
+
             services.AddDbContext<Context>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
@@ -59,10 +67,10 @@ namespace ProjectAngularTeste
 
             //services.AddDbContext<Context>();
 
-            services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectAngularTeste.Api", Version = "v1"} );
-            }  );
-            
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectAngularTeste.Api", Version = "v1" });
+            });
 
         }
 
@@ -91,6 +99,8 @@ namespace ProjectAngularTeste
 
             app.UseRouting();
 
+            app.UseCors();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -107,7 +117,7 @@ namespace ProjectAngularTeste
 
                 if (env.IsDevelopment())
                 {
-                   //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
+                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:4200");
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });

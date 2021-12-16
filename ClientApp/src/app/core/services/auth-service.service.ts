@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,13 @@ export class AuthServiceService {
   private password: string = '1234';
 
 
-  constructor(private _router: Router) { 
+  constructor(private _router: Router, private httpclient: HttpClient) {
 
+  }
+
+  authentication(email: string, senha: string): Observable<any>  {
+
+    return this.httpclient.post("https://localhost:44389/api/Usuarios/login", { email, senha });
   }
 
   isLoggedIn(): boolean {
